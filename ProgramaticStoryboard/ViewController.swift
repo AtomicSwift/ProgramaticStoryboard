@@ -30,8 +30,10 @@ class ViewController: UIViewController {
     
     let introTextView: UITextView = {
         let textView = UITextView()
-        textView.text = "Join our partner program today"
-        textView.font = UIFont.boldSystemFont(ofSize: 18)
+        
+        let attributedText = NSMutableAttributedString(string: "Join Our partner program", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18)])
+        attributedText.append(NSMutableAttributedString(string: "\n\n\nAre you ready for lots and lots of fun? Dont wait any longer! Join Today", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13), NSMutableAttributedString.Key.foregroundColor : UIColor.gray]))
+        textView.attributedText = attributedText
         textView.textAlignment = .center
         textView.isEditable = false
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -62,8 +64,8 @@ class ViewController: UIViewController {
         skullImageView.heightAnchor.constraint(equalTo: topContainerView.heightAnchor, multiplier: 0.5).isActive = true
         
         introTextView.topAnchor.constraint(equalTo: topContainerView.bottomAnchor).isActive = true
-         introTextView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-         introTextView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+         introTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
+         introTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
          introTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
     }
