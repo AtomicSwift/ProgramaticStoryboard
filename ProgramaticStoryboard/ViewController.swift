@@ -58,11 +58,10 @@ class ViewController: UIViewController {
          skullImageView.translatesAutoresizingMaskIntoConstraints = false
          skullImageView.centerXAnchor.constraint(equalTo: topContainerView.centerXAnchor).isActive = true
          skullImageView.centerYAnchor.constraint(equalTo: topContainerView.centerYAnchor).isActive = true
-//         skullImageView.topAnchor.constraint(equalTo: topContainerView.topAnchor).isActive = true
-         skullImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-         skullImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+
+        skullImageView.heightAnchor.constraint(equalTo: topContainerView.heightAnchor, multiplier: 0.5).isActive = true
         
-         introTextView.topAnchor.constraint(equalTo: skullImageView.bottomAnchor, constant: 10).isActive = true
+        introTextView.topAnchor.constraint(equalTo: topContainerView.bottomAnchor).isActive = true
          introTextView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
          introTextView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
          introTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
